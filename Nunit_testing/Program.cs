@@ -1,5 +1,5 @@
 ﻿using System;
-public class ConversionExample
+public class Tobinary
 {
     public static void Main(string[] args)
     {
