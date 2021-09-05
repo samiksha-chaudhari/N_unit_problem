@@ -1,12 +1,21 @@
 ﻿using System;
 
-namespace Nunit_testing
+namespace TempConver
 {
-    class Program
+    class TempConver
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("N unit testing");
+            double cel, far;
+            Console.WriteLine("Enter the Temperature in Celsius(°C) : ");
+            cel = int.Parse(Console.ReadLine());
+            far = (cel * 9) / 5 + 32;
+            Console.WriteLine("Temperature in Fahrenheit is : " + far + "°F");
+            Console.WriteLine("Enter the value of Fahrenheit:");
+            far = Convert.ToDouble(Console.ReadLine());
+            cel = (far - 32) * 5 / 9;
+            Console.WriteLine("Temperature in Celsius is: " + cel + "°C");
+            
         }
     }
 }
