@@ -1,26 +1,38 @@
 ﻿using System;
 public class Tobinary
 {
-    public static void Main(string[] args)
+       public static void Main(string[] args)
     {
-        int n, i;
-        int[] a = new int[10];
-        int[] b = new int[10];
-        Console.Write("Enter the number to convert: ");
-        n = int.Parse(Console.ReadLine());
-        for (i = 0; n > 0; i++)
+        Console.WriteLine("Enter input for conversion of binary:");
+        int input = Convert.ToInt32(Console.ReadLine());
+        string binary = string.Empty;
+        while (input > 0)
         {
-            a[i] = n % 2;
-            n = n / 2;
-       
+            int addBinary = input % 2;
+            binary = addBinary + string.Empty + binary;
+            input = input / 2;
         }
-       Console.Write("Binary of the given number= ");
-       for (i = i - 1; i >= 0; i--)
-        {
-           Console.Write(a[i]);
-        }
-        
 
+        Console.WriteLine(binary);
+        string string1 = binary.Substring(0, binary.Length / 2);
+        string string2 = binary.Substring(binary.Length / 2, binary.Length - (binary.Length / 2));
+        Console.WriteLine(string1);
+        Console.WriteLine(string2);
+        int b=(Convert.ToInt32(string2 + string1));
+        Console.WriteLine(b);
+
+        double decimalValue = 0;
+        int count = 0;
+        while (b > 0)
+        {
+            int power = b % 10;
+            decimalValue += Math.Pow(2, count) * power;
+            b = b / 10;
+            count++;  
+        }
+        Console.WriteLine(decimalValue);
 
     }
+
+
 }
