@@ -2,26 +2,24 @@
 public class VENDING
 {	public static void countCurrency(int amount)
 	{
-		int[] notes = new int[] { 2000, 500, 200, 100, 50, 20, 10, 5, 1 };
-		int[] noteCounter = new int[9];
+		int[] currency= new int[] { 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1 };
+		int[] Counter = new int[10];
 
-		for (int i = 0; i < 9; i++)
+		for (int i = 0; i < 10; i++)
 		{
-			if (amount >= notes[i])
+			if (amount >= currency[i])
 			{
-				noteCounter[i] = amount / notes[i];
-				amount = amount - noteCounter[i] * notes[i];
+				Counter[i] = amount / currency[i];
+				amount = amount -Counter[i] * currency[i];
 			}
 		}
 
-		// Print notes
-		Console.WriteLine("Currency Count ->");
-		for (int i = 0; i < 9; i++)
+		Console.WriteLine("Notes Count :");
+		for (int i = 0; i < 10; i++)
 		{
-			if (noteCounter[i] != 0)
+			if (Counter[i] != 0)
 			{
-				Console.WriteLine(notes[i] + " : "
-					+ noteCounter[i]);
+				Console.WriteLine(currency[i] + " * " + Counter[i]);
 			}
 		}
 	}
