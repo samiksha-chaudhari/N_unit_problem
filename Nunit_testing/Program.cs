@@ -1,26 +1,28 @@
 ﻿using System;
 public class Tobinary
-{
+{       
        public static void Main(string[] args)
     {
         Console.WriteLine("Enter input for conversion of binary:");
-        int input = Convert.ToInt32(Console.ReadLine());
+        int n = Convert.ToInt32(Console.ReadLine());
         string binary = string.Empty;
-        while (input > 0)
+        while (n > 0)
         {
-            int addBinary = input % 2;
+            int addBinary = n % 2;
             binary = addBinary + string.Empty + binary;
-            input = input / 2;
+            n = n / 2;
         }
-
         Console.WriteLine(binary);
-        string string1 = binary.Substring(0, binary.Length / 2);
-        string string2 = binary.Substring(binary.Length / 2, binary.Length - (binary.Length / 2));
-        Console.WriteLine(string1);
-        Console.WriteLine(string2);
-        int b=(Convert.ToInt32(string2 + string1));
+        
+        //swapping binary nibb
+        string str1 = binary.Substring(0, binary.Length / 2);
+        string str2 = binary.Substring(binary.Length / 2, binary.Length - (binary.Length / 2));
+        Console.WriteLine(str1);
+        Console.WriteLine(str2);
+        int b=(Convert.ToInt32(str2 + str1));
         Console.WriteLine(b);
 
+        //converting to decimal
         double decimalValue = 0;
         int count = 0;
         while (b > 0)
